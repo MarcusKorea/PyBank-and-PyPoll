@@ -1,5 +1,6 @@
 import os
-import csv 
+import csv
+from typing import final 
 
 # Path to csv file
 filePath = os.path.join("Resources","budget_data.csv")
@@ -53,12 +54,16 @@ with open(filePath,'r') as file:
             decAmount = changes[index]
             decDate =  datList[index][0]
 
-# Print the results
-title = 'Financial Analysis'
-print(title)
-print('-'*(len(title)+10))
-print(f'Total Months: {noOfMonths}')
-print(f'Total: ${netTotal}')
-print(f'Average Change: ${averageChange}')
-print(f'Greatest Increase in Profits: {incDate} (${incAmount})')
-print(f'Greatest Increase in Profits: {decDate} (${decAmount})')
+# Print the results to a txt file
+
+with open('results.txt',"w") as results:
+    title = "Financial Analysis"
+    finalList = ['Financial Analysis',
+    '-'*(len(title)+10),
+    f'Total Months: {noOfMonths}',
+    f'Total: ${netTotal}',
+    f'Average Change: ${averageChange}',
+    f'Greatest Increase in Profits: {incDate} (${incAmount})',
+    f'Greatest Increase in Profits: {decDate} (${decAmount})']
+    for element in finalList:
+        results.write(element + "\n")
