@@ -8,6 +8,7 @@ with open(filePath,'r') as file:
     data = csv.reader(file)
     # Get header
     header = next(data)
+    
     # Initialise variables 
     # Number of months (also number of rows)
     noOfMonths = 0
