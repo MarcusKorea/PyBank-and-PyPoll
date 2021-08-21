@@ -1,6 +1,5 @@
 import os
 import csv
-from typing import final 
 
 # Path to csv file
 filePath = os.path.join("Resources","budget_data.csv")
@@ -57,7 +56,10 @@ with open(filePath,'r') as file:
 
 # Print the results to a txt file
 
-with open('results.txt',"w") as results:
+# Path to Output file
+outPath = os.path.join("analysis","results.txt")
+
+with open(outPath,"w") as results:
     title = "Financial Analysis"
     finalList = ['Financial Analysis',
     '-'*(len(title)+10),

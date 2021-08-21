@@ -1,6 +1,6 @@
 import os
 import csv
-from typing import final
+
 
 filePath = os.path.join("Resources","election_data.csv")
 
@@ -41,15 +41,21 @@ with open(filePath, 'r') as file:
     # Store values in list for the candidates
     candidates = [["Khan", khanPerc,khanVotes],["Correy",correyPerc,correyVotes],["Li",liPerc,liVotes],["O'Tooley",tooleyPerc, tooleyVotes]]
 
-    khan = ["Khan", khanPerc,khanVotes]
-    correy = ["Correy",correyPerc,correyVotes]
-    li = ["Li",liPerc,liVotes]
-    tooley = ["O'Tooley",tooleyPerc, tooleyVotes]
 
-    winner = []
-    for index in range(3):
-        if candidates[index + 1][2] > candidates[index][2]:
-            winner.append(candidates[0][2])
+    # Set winner to the first person in the list
+    winner = ""
+
+    # Find the winner
+    for index in range(len(candidates)-1):
+        if index == 0:
+            if candidates[index][2] > candidates[index + 1][2]:
+                winner = candidates[0]
+            else:
+                winner = candidates[1]
+            index += 1
+        else:
+            if winner[2] < candidates[index][2]:
+                winner = candidates[index]
 
     # Output
     title = "Election Results"
@@ -57,15 +63,17 @@ with open(filePath, 'r') as file:
                 '-'* (len(title) + 9),
                 f"Total Votes: {votes}",
                 '-'* (len(title) + 9),
-                f"{khan[0]}: {khan[1]}% ({khan[2]})",
-                f"{correy[0]}: {correy[1]}% ({correy[2]})",
-                f"{li[0]}: {li[1]}% ({li[2]})",
-                f"{tooley[0]}: {tooley[1]}% ({tooley[2]})",
+                f"{candidates[0][0]}: {candidates[0][1]}% ({candidates[0][2]})",
+                f"{candidates[1][0]}: {candidates[1][1]}% ({candidates[1][2]})",
+                f"{candidates[2][0]}: {candidates[2][1]}% ({candidates[2][2]})",
+                f"{candidates[3][0]}: {candidates[3][1]}% ({candidates[3][2]})",
                 '-'* (len(title) + 9),
-                f'Winner: {winner}',
+                f'Winner: {winner[0]}',
                 '-'* (len(title) + 9)]
-    
+    # Path to Output file
+    outPath = os.path.join("analysis","results.txt")
+
     # Write output to txt file
-    with open("results.txt",'w') as results:
+    with open(outPath,'w') as results:
         for element in finalList:
             results.write(element+ "\n")
