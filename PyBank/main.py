@@ -3,6 +3,7 @@ import csv
 
 # Path to csv file
 filePath = os.path.join("Resources","budget_data.csv")
+
 with open(filePath,'r') as file: 
     data = csv.reader(file)
     # Get header
@@ -55,7 +56,6 @@ with open(filePath,'r') as file:
             decDate =  datList[index][0]
 
 # Print the results to a txt file
-
 # Path to Output file
 outPath = os.path.join("analysis","results.txt")
 
@@ -70,3 +70,4 @@ with open(outPath,"w") as results:
     f'Greatest Increase in Profits: {decDate} (${decAmount})']
     for element in finalList:
         results.write(element + "\n")
+print("Script finished running! Check the Analysis folder!")

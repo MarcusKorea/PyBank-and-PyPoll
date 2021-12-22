@@ -2,10 +2,10 @@
 ## PyBank
 
 ![Revenue](Images/revenue-per-lead.png)
-
+## **Background**
 * In this challenge, you are tasked with creating a Python script for analysing the financial records of your company. You will give a set of financial data called [budget_data.csv](PyBank/Resources/budget_data.csv). The dataset is composed of two columns: `Date` and `Profit/Losses`. (Thankfully, your company has rather lax standards for accounting so the records are simple.)
 
-* Your task is to create a Python script that analyses the records to calculate each of the following:
+* The task is to create a Python script that analyses the records to calculate each of the following:
 
   * The total number of months included in the dataset
 
@@ -17,23 +17,11 @@
 
   * The greatest decrease in losses (date and amount) over the entire period
 
-* As an example, your analysis should look similar to the one below:
-
-  ```text
-  Financial Analysis
-  ----------------------------
-  Total Months: 86
-  Total: $38382578
-  Average  Change: $-2315.12
-  Greatest Increase in Profits: Feb-2012 ($1926159)
-  Greatest Decrease in Profits: Sep-2013 ($-2196167)
-  ```
-
-* In addition, your final script should both print the analysis to the terminal and export a text file with the results.
+* In addition, the final script should export the analysis to a text file with the results.
 
 ## PyPoll
 
-![Vote Counting](Images/Vote_counting.png)
+![Vote Counting](Screenshots/Vote_counting.png)
 
 * In this challenge, you are tasked with helping a small, rural town modernise its vote counting process.
 
@@ -49,24 +37,44 @@
 
   * The winner of the election based on popular vote.
 
-* As an example, your analysis should look similar to the one below:
-
-  ```text
-  Election Results
-  -------------------------
-  Total Votes: 3521001
-  -------------------------
-  Khan: 63.000% (2218231)
-  Correy: 20.000% (704200)
-  Li: 14.000% (492940)
-  O'Tooley: 3.000% (105630)
-  -------------------------
-  Winner: Khan
-  -------------------------
-  ```
-
-* In addition, your final script should both print the analysis to the terminal and export a text file with the results.
+* In addition, the final script should export the analysis to a text file with the results.
 
 ## Copyright
 
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+
+## **Languages used**:
+- Python
+
+## **Python Packages Used**:
+- os
+- csv
+  
+## **Conclusions**
+- 
+## **Screenshots**
+## **PyBank**
+![PyBank Results](Screenshots/PyBank_Results.png)
+## **PyPoll**
+![PyPoll Results](Screenshots/PyPoll_Results.png)
+
+## **Running the Python Scripts**
+**Note: You need Python installed for this**
+1. Before running any of the Python scripts please install the needed packages by running the following code in the terminal.
+         
+        pip install os
+        pip install csv
+
+2. Run the appropriate scripts.
+  - Each task is in a seperate folder. Pybank in the folder *Pybank* and Pypoll in the folder *PyPoll*. 
+  - Each of these one fscript file called *main.py* folders contain two sub folders
+     
+     *Analysis* - This contains the results of the analysis
+
+     *Resources* - This contains the data file that the analysis is conducted on.
+
+  - Set your current path to either *PyBank* or *PyPoll*.
+  
+  - To run the analysis, open the appropriate folder and then open the file *main.py*.
+  
+  - The analysis will create a *.txt* file in the folder *analysis* with the results. 

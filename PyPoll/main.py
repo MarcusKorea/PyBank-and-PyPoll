@@ -77,3 +77,4 @@ with open(filePath, 'r') as file:
     with open(outPath,'w') as results:
         for element in finalList:
             results.write(element+ "\n")
+print("Script finished running! Check the Analysis folder!")
