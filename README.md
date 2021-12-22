@@ -49,9 +49,7 @@
 ## **Python Packages Used**:
 - os
 - csv
-  
-## **Conclusions**
-- 
+
 ## **Screenshots**
 ## **PyBank**
 ![PyBank Results](Screenshots/PyBank_Results.png)
